@@ -21,7 +21,7 @@ body{
 }
 
 .properties{
-    width: 300px;
+    width: 400px;
     height: 27vh;
     border: 2px solid black;
     border-radius: 10px;
@@ -55,17 +55,25 @@ input{
 }
 
 button{
-    width: 40px;
-    height: 40px;
     outline: none;
     padding: .3rem;
     font-size: 1.2rem;
-    border-radius: 50%;
     font-weight: 600;
     border: none;
     color: white;
     background-color: rgb(29, 80, 175);
     transition: all .2s;
+}
+.try{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.clear{
+    width: 70px;
+    height: 40px;
+    border-radius: 30px;
 }
 
 button:hover{

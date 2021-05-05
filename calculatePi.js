@@ -1,17 +1,18 @@
 let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
-function drawcircle(){
+function drawCircle(){
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
     ctx.arc(400, 400, 400, 0, 2 * Math.PI);
     ctx.stroke();   
 }
 
-drawcircle();
+drawCircle();
 
 const numberOfPoints = document.querySelector('.pointsYouWant');
 const tryButton = document.querySelector('.try');
+const clearButton = document.querySelector('.clear');
 const showPi = document.querySelector('.piShow');
 let pi = 0;
 
@@ -22,10 +23,10 @@ function calculatePi(points){
     let pointsInSqure = 0;
     
 
-    drawcircle();
+    drawCircle();
 
-    if(numberOfPoints.value === '' || numberOfPoints.value < 0){
-        showPi.innerText = 'Invalid number';
+    if(numberOfPoints.value === '' || numberOfPoints.value < 0 ){
+        showPi.innerText = 'Invalid';
     }  
     else {
 
@@ -58,4 +59,10 @@ function calculatePi(points){
 tryButton.addEventListener('click', function(){
     calculatePi(numberOfPoints.value);
     numberOfPoints.value = '';
+});
+
+clearButton.addEventListener('click', function(){
+    drawCircle();
+    numberOfPoints.value = '';
+    showPi.innerText = '';
 });
