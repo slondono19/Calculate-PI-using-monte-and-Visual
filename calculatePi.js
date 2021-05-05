@@ -2,10 +2,10 @@ let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
 function drawcircle(){
- ctx.beginPath();
-ctx.arc(400, 400, 400, 0, 2 * Math.PI);
-ctx.stroke();   
-ctx.clearRect(0, 0, c.width, c.height);
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.beginPath();
+    ctx.arc(400, 400, 400, 0, 2 * Math.PI);
+    ctx.stroke();   
 }
 
 drawcircle();
@@ -23,22 +23,29 @@ function calculatePi(points){
     
 
     drawcircle();
-    
-    for(let i = 0; i<= points; i++){
-        pointsInSqure += 1;
-        
-        let numInX = Math.random()*800;
-        let numInY = Math.random()*800;
-        coordinates = Math.sqrt(numInY**2 + numInX**2);
-        ctx.fillRect(numInX,numInY,1,1);
-        if(coordinates <= 800){
-            pointsInCircle += 1;
-        }
+
+    if(numberOfPoints.value !== ''){
+
+            for(let i = 0; i<= points; i++){
+                pointsInSqure += 1;
+
+                let numInX = Math.random()*800;
+                let numInY = Math.random()*800;
+                distance = Math.sqrt(numInY**2 + numInX**2);
+
+                ctx.fillRect(numInX,numInY,1,1);
+                if(distance <= 800){
+                    pointsInCircle += 1;
+                }
+            }
+            
+            pi = (pointsInCircle*4)/(pointsInSqure);
+            //console.log(pi);
+            showPi.innerText = 'With '+ points+ ' points your pi calculation is: ' + pi;
     }
+    else showPi.innerText = 'Unable to calculate PI without a number of points';
     
-    pi = (pointsInCircle*4)/(pointsInSqure);
-    //console.log(pi);
-    showPi.innerText = 'With '+ points+ ' points your pi calculation is: ' + pi;
+
 }
 
 
