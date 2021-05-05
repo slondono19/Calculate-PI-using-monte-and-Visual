@@ -24,7 +24,10 @@ function calculatePi(points){
 
     drawcircle();
 
-    if(numberOfPoints.value !== ''){
+    if(numberOfPoints.value === '' || numberOfPoints.value < 0){
+        showPi.innerText = 'Invalid number';
+    }  
+    else {
 
             for(let i = 0; i<= points; i++){
                 pointsInSqure += 1;
@@ -43,7 +46,6 @@ function calculatePi(points){
             //console.log(pi);
             showPi.innerText = 'With '+ points+ ' points your pi calculation is: ' + pi;
     }
-    else showPi.innerText = 'Unable to calculate PI without a number of points';
     
 
 }
