@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="calculatePi.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
     <title>Find PI</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="602" height="602" 
-    style="border:1px solid #000000;"></canvas>
+
+    <div class="container">
+        <div class="visualContainer">
+            <h1>Visual representation Monte Carlo technique</h1>
+            <canvas id="myCanvas" width="800" height="800"
+            style="border:2px solid #000000;"></canvas>
+        </div>
+        <div class="properties">
+            <h2>properties Control</h2>
+            
+            <div class="pointsToBeDrawn">
+                <p>Here you can type the number of points you want to be drawn</p>
+                <input type="text" class="pointsYouWant">
+                <button class="try">Try</button>
+                <h3 class="piShow"></h3>
+            </div>
+        </div>
+    </div>    
+    
+    <script src="calculatePi.js" defer></script>
 </body>
 </html>
