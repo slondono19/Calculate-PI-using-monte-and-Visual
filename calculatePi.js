@@ -1,18 +1,12 @@
 let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
-function drawEverything(){
-    drawCircle();
-    drawPlane();
-    drawSqure();
-}
 function drawCircle(){
     
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
     ctx.arc(400, 400, 200, 0, 2 * Math.PI);
-    ctx.stroke(); 
-    
+    ctx.stroke();  
     
 }
 
@@ -33,6 +27,22 @@ function drawSqure(){
     ctx.beginPath();  
     ctx.rect(200, 200, 400, 400);
     ctx.stroke();
+}
+
+function writeAxis(){
+    ctx.font = "30px Arial";
+    ctx.fillText("y", 380, 120);
+    ctx.fillText("x", 680, 395);
+
+
+
+}
+
+function drawEverything(){
+    drawCircle();
+    drawPlane();
+    drawSqure();
+    writeAxis();
 }
 
 drawEverything();
