@@ -16,33 +16,33 @@ const draw = {
     drawCircle: function(){
         ctx.clearRect(0, 0, c.width, c.height);
         ctx.beginPath();
-        ctx.arc(400, 400, 200, 0, 2 * Math.PI);
+        ctx.arc(350, 350, 200, 0, 2 * Math.PI);
         ctx.stroke();  
     }, 
 
     drawPlane: function(){
         ctx.beginPath();
-        ctx.moveTo(400, 100);
-        ctx.lineTo(400, 700);
+        ctx.moveTo(350, 50);
+        ctx.lineTo(350, 650);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.moveTo(100, 400);
-        ctx.lineTo(700, 400);
+        ctx.moveTo(50, 350);
+        ctx.lineTo(650, 350);
         ctx.stroke();
     },
 
     drawSqure: function(){
         ctx.beginPath();  
-        ctx.rect(200, 200, 400, 400);
+        ctx.rect(150, 150, 400, 400);
         ctx.stroke();
     },
 
     writeAxis: function(){
 
         ctx.font = "30px Arial";
-        ctx.fillText("y", 380, 120);
-        ctx.fillText("x", 680, 395);
+        ctx.fillText("y", 330, 70);
+        ctx.fillText("x", 630, 345);
     },
 
      drawEverything: function(){
@@ -58,7 +58,7 @@ draw.drawEverything();
 
 function calculatePi(points){
     
-    let distanceFromAxis = 200;
+    let distanceFromAxis = 150;
     let pointsInCircle = 0;
     let pointsInSqure = 0;
 
@@ -86,7 +86,7 @@ function calculatePi(points){
             //console.log(pi);
             showPi.innerText = 'With '+ points+ ' points your pi calculation is: ' + pi;
     }
-    
+
 
 }
 

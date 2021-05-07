@@ -2,6 +2,8 @@
     --purpleColor: rgba(143,92,181,1);
     --redColor:rgba(252,70,107,1);
 }
+
+
 body{
     display: flex;
     flex-direction: row;
@@ -10,6 +12,9 @@ body{
     height: 100vh;
     margin: none;
     background: linear-gradient(90deg,var(--purpleColor) 26%, var(--redColor) 88%);
+    background-repeat: no-repeat;
+    overflow: hidden;
+
 }
 
 h1{
@@ -20,6 +25,7 @@ h1{
 .container{
     display: flex;
     flex-direction: row;
+    align-items: center;
 
 }
 .visualContainer{
@@ -32,12 +38,13 @@ h1{
 
 .properties{
     width: 400px;
-    height: 27vh;
+    height: 18rem;
     border-radius: 10px;
     margin: 2rem;
     padding: 1rem;
     background-color: rgb(252, 252, 252);
-    margin-top: 15vh;
+    position: relative;
+    bottom: 9.5rem;
 }
 
 h2{
