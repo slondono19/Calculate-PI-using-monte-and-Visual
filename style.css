@@ -34,18 +34,18 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60rem;
 }
 
 .properties{
-    width: 400px;
+    width: 25rem;
     height: 18rem;
     border-radius: 10px;
     margin: 2rem;
     padding: 1rem;
     background-color: rgb(252, 252, 252);
     position: relative;
-    bottom: 9.5rem;
+    bottom: 6rem;
 }
 
 h2{
