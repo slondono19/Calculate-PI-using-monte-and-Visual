@@ -1,3 +1,13 @@
+
+
+//Addressing the DOM
+
+const numberOfPoints = document.querySelector('.pointsYouWant');
+const tryButton = document.querySelector('.try');
+const clearButton = document.querySelector('.clear');
+const showPi = document.querySelector('.piShow');
+let pi = 0;
+
 let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
@@ -45,13 +55,6 @@ const draw = {
 
 draw.drawEverything();
 
-const numberOfPoints = document.querySelector('.pointsYouWant');
-const tryButton = document.querySelector('.try');
-const clearButton = document.querySelector('.clear');
-const showPi = document.querySelector('.piShow');
-let pi = 0;
-
-
 
 function calculatePi(points){
     
@@ -86,7 +89,6 @@ function calculatePi(points){
     
 
 }
-
 
 
 
