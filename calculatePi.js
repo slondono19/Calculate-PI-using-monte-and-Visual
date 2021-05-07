@@ -1,14 +1,19 @@
 let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
+function drawEverything(){
+    drawCircle();
+    drawPlane();
+    drawSqure();
+}
 function drawCircle(){
+    
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
     ctx.arc(400, 400, 200, 0, 2 * Math.PI);
-    ctx.rect(200, 200, 400, 400);
-    ctx.stroke();   
-
-    drawPlane();
+    ctx.stroke(); 
+    
+    
 }
 
 function drawPlane(){
@@ -16,14 +21,21 @@ function drawPlane(){
     ctx.moveTo(400, 100);
     ctx.lineTo(400, 700);
     ctx.stroke();
-
+    
     ctx.beginPath();
     ctx.moveTo(100, 400);
     ctx.lineTo(700, 400);
     ctx.stroke();
 }
 
-drawCircle();
+function drawSqure(){
+    
+    ctx.beginPath();  
+    ctx.rect(200, 200, 400, 400);
+    ctx.stroke();
+}
+
+drawEverything();
 
 const numberOfPoints = document.querySelector('.pointsYouWant');
 const tryButton = document.querySelector('.try');
@@ -36,9 +48,9 @@ function calculatePi(points){
     
     let pointsInCircle = 0;
     let pointsInSqure = 0;
-    
+    let distanceFromAxis = 200;
 
-    drawCircle();
+    drawEverything();
 
     if(numberOfPoints.value === '' || numberOfPoints.value < 0 ){
         showPi.innerText = 'Invalid';
@@ -52,7 +64,7 @@ function calculatePi(points){
                 let numInY = Math.random()*400;
                 distance = Math.sqrt(numInY**2 + numInX**2);
 
-                ctx.fillRect(numInX + 200,numInY + 200,1,1);
+                ctx.fillRect(numInX + distanceFromAxis,numInY + distanceFromAxis,1,1);
                 if(distance <= 400){
                     pointsInCircle += 1;
                 }
@@ -77,7 +89,7 @@ tryButton.addEventListener('click', function(){
 });
 
 clearButton.addEventListener('click', function(){
-    drawCircle();
+    drawEverything();
     numberOfPoints.value = '';
     showPi.innerText = '';
 });
