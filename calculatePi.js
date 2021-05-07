@@ -7,6 +7,20 @@ function drawCircle(){
     ctx.arc(400, 400, 200, 0, 2 * Math.PI);
     ctx.rect(200, 200, 400, 400);
     ctx.stroke();   
+
+    drawPlane();
+}
+
+function drawPlane(){
+    ctx.beginPath();
+    ctx.moveTo(400, 100);
+    ctx.lineTo(400, 700);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 400);
+    ctx.lineTo(700, 400);
+    ctx.stroke();
 }
 
 drawCircle();
@@ -38,8 +52,8 @@ function calculatePi(points){
                 let numInY = Math.random()*400;
                 distance = Math.sqrt(numInY**2 + numInX**2);
 
-                ctx.fillRect(numInX,numInY,1,1);
-                if(distance <= 800){
+                ctx.fillRect(numInX + 200,numInY + 200,1,1);
+                if(distance <= 400){
                     pointsInCircle += 1;
                 }
             }
