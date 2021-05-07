@@ -4,7 +4,8 @@ let ctx = c.getContext("2d");
 function drawCircle(){
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
-    ctx.arc(400, 400, 400, 0, 2 * Math.PI);
+    ctx.arc(400, 400, 200, 0, 2 * Math.PI);
+    ctx.rect(200, 200, 400, 400);
     ctx.stroke();   
 }
 
@@ -33,8 +34,8 @@ function calculatePi(points){
             for(let i = 0; i<= points; i++){
                 pointsInSqure += 1;
 
-                let numInX = Math.random()*800;
-                let numInY = Math.random()*800;
+                let numInX = Math.random()*400;
+                let numInY = Math.random()*400;
                 distance = Math.sqrt(numInY**2 + numInX**2);
 
                 ctx.fillRect(numInX,numInY,1,1);

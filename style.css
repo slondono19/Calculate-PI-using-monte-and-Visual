@@ -8,7 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    margin: none;
     background: linear-gradient(90deg,var(--purpleColor) 26%, var(--redColor) 88%);
 }
 
@@ -33,7 +33,6 @@ h1{
 .properties{
     width: 400px;
     height: 27vh;
-    border: 2px solid black;
     border-radius: 10px;
     margin: 2rem;
     padding: 1rem;
