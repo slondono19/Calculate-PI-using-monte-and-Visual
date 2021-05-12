@@ -83,10 +83,10 @@ function calculatePi(points){
             }
             
             pi = (pointsInCircle*4)/(pointsInSqure);
-            //console.log(pi);
+            console.log(pi);
             showPi.innerText = 'With '+ points+ ' points your pi calculation is: ' + pi;
     }
-
+    
 
 }
 
